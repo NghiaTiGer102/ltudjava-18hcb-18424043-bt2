@@ -1,4 +1,0 @@
-﻿CTT012|Thiết kế giao diện|C32
-CTT012|Kiểm chứng phần mềm|C32
-﻿CTT001|Lập trình ứng dụng Java|C31
-CTT002|Mạng máy tính|C31
