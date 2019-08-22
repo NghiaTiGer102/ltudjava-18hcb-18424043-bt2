@@ -41,13 +41,14 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="quanlysinhvien"/>
-  <table-filter match-name="giaovu"/>
-  <table-filter match-name="lopmonhoc"/>
-  <table-filter match-name="chucvu"/>
-  <table-filter match-name="sinhvien"/>
-  <table-filter match-name="lophoc"/>
-  <table-filter match-name="bangdiem"/>
   <table-filter match-name="khoabieu"/>
-  <table-filter match-name="taikhoan"/>
+  <table-filter match-name="lophoc"/>
+  <table-filter match-name="lopmonhoc"/>
+  <table-filter match-name="phuckhao"/>
   <table-filter match-name="lopkhoabieu"/>
+  <table-filter match-name="chucvu"/>
+  <table-filter match-name="giaovu"/>
+  <table-filter match-name="taikhoan"/>
+  <table-filter match-name="sinhvien"/>
+  <table-filter match-name="bangdiem"/>
 </hibernate-reverse-engineering>

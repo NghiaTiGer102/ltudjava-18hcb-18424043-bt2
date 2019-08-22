@@ -537,7 +537,7 @@ public class FormDanhSachDiemSinhVien extends javax.swing.JFrame {
      
     listDiemSV.forEach((element) -> {
         
-        Bangdiem bd = new Bangdiem(cmbDiemLop.getSelectedItem()+element.getMSSV(), element.getMSSV(),element.getHoTen(),element.getDiemGK(),element.getDiemCK(),element.getDiemKhac(),element.getDiemT());
+        Bangdiem bd = new Bangdiem(cmbDiemLop.getSelectedItem()+"-"+element.getMSSV(), element.getMSSV(),element.getHoTen(),element.getDiemGK(),element.getDiemCK(),element.getDiemKhac(),element.getDiemT());
         bdDao.Them(bd);
         
         String dulieudiemsinhvien = element.getMSSV()+"|"+element.getHoTen()+"|"+element.getDiemGK()+"|"+element.getDiemCK()+"|"+element.getDiemKhac()+"|"+element.getDiemT()+"\n";

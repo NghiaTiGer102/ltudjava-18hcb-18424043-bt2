@@ -78,6 +78,34 @@ public class TaiKhoanDAO {
         
           
     }
+    
+    
+     public  Taikhoan getByID(String ID)
+    {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Taikhoan tk = new Taikhoan();
+        try {
+            String hql = "From Taikhoan where maTaiKhoan = :ID ";
+                Query query = session.createQuery(hql);
+                query.setParameter("ID", ID);
+                tk = (Taikhoan)query.list().get(0);
+               
+            
+        } catch (Exception e) 
+        {
+            return null;
+        }
+        finally
+        {
+            session.close();
+            
+             return  tk;
+        
+        }
+      
+        
+          
+    }
 
 
     public  void  ThemTaiKhoan(Taikhoan item)
@@ -105,6 +133,54 @@ public class TaiKhoanDAO {
             {
                 session.beginTransaction();
                 session.save(item);
+                session.getTransaction().commit();
+
+            }
+    
+
+                
+             
+              
+        } catch (Exception e) {
+            return;
+        }
+        finally
+        {
+  
+            session.close();
+         
+        }
+        
+       
+          
+     }
+    
+    
+    public  void  Sua(Taikhoan item)
+    {
+        
+      
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        
+        boolean kqtrung= KiemTraTrung(item.getMaTaiKhoan());
+        try {
+        
+//        String hql = "INSERT INTO Sinhvien (mssv, hoTen,gioiTinh,cmnd,machucvu,malophoc)" +
+//                " SELECT :mssv , :hoTen, :gioiTinh , :cmnd , :maChucVu , :maLop from Sinhvien";
+//            Query query = session.createQuery(hql);
+//               query.setParameter("mssv", sv.getCmnd());
+//               query.setParameter("hoTen", sv.getHoTen());
+//               query.setParameter("gioiTinh", sv.isGioiTinh());
+//                  query.setParameter("maChucVu",sv.getChucvu().getMaChucVu());
+//               query.setParameter("cmnd",sv.getCmnd() );
+//                query.setParameter("maLop",sv.getLophoc().getMaLop());
+//            kq = query.executeUpdate();
+    
+
+            if(kqtrung)
+            {
+                session.beginTransaction();
+                session.update(item);
                 session.getTransaction().commit();
 
             }

@@ -45,8 +45,11 @@
                   <Component id="lbMSSV" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="lbLopHoc" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="419" max="32767" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="405" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jButton1" max="32767" attributes="0"/>
+                  <Component id="btnPhucKhao" max="32767" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -64,8 +67,9 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lbHoTen" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnPhucKhao" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbLopHoc" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -141,6 +145,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="l&#x1edb;p"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnPhucKhao">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ph&#xfa;c kh&#x1ea3;o &#x111;i&#x1ec3;m"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPhucKhaoActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

@@ -15,7 +15,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javaapplication1.DAO.TaiKhoanDAO;
 import javaapplication1.Entities.TaiKhoan;
+import javaapplication1.Pojo.Taikhoan;
 import javax.swing.JOptionPane;
 
 /**
@@ -113,124 +115,11 @@ public class FormDoiMatKhau extends javax.swing.JFrame {
     private void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
         // TODO add your handling code here:
         
-        // Get Current Directory using getAbsolutePath()
-        File file = new File("");
-        String currentDirectory = file.getAbsolutePath();
-        System.out.println("Current working directory : " + currentDirectory);
- 
-        
-        List<TaiKhoan> listTaiKhoan = new ArrayList<TaiKhoan>();
-        BufferedReader br = null;
-        
-        System.out.println(txtTaiKhoan.getText().toLowerCase());
-        if(txtTaiKhoan.getText().toLowerCase().equalsIgnoreCase("giaovu"))
-        {
-           
-            currentDirectory+="\\Data\\TaiKhoan\\GiaoVu.txt";
-              try {   
-            br = new BufferedReader(new FileReader(currentDirectory));       
-
-            System.out.println("Đọc nội dung file sử dụng phương thức readLine()");
-
-            String textInALine;
-           
-          listTaiKhoan = new ArrayList<TaiKhoan>();
-            
-            while ((textInALine = br.readLine()) != null) {           
-                
-                TaiKhoan taikhoan = new TaiKhoan();
-                String[] taiKhoanTemp = textInALine.split("\\|");
-               taikhoan.setTaiKhoan(taiKhoanTemp[0]);  
-               taikhoan.setMatKhau(taiKhoanTemp[1]);  
-               listTaiKhoan.add(taikhoan);            
-            }
-            
-            for(TaiKhoan tk :listTaiKhoan)
-            {
-                if(tk.getTaiKhoan().equals(txtTaiKhoan.getText()))
-                {
-                    tk.setMatKhau(txtMatKhau.getText());
-                }
-            }
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    br.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                }
-        }
-        else
-        {
-              currentDirectory+="\\Data\\TaiKhoan\\TaiKhoan.txt";
-              try {   
-            br = new BufferedReader(new FileReader(currentDirectory));       
-
-            System.out.println("Đọc nội dung file sử dụng phương thức readLine()");
-
-            String textInALine;
-           
-         listTaiKhoan = new ArrayList<TaiKhoan>();
-            
-            while ((textInALine = br.readLine()) != null) {           
-                
-                TaiKhoan taikhoan = new TaiKhoan();
-                String[] taiKhoanTemp = textInALine.split("\\|");
-               taikhoan.setTaiKhoan(taiKhoanTemp[0]);  
-               taikhoan.setMatKhau(taiKhoanTemp[1]);  
-               listTaiKhoan.add(taikhoan);            
-            }
-            
-            for(TaiKhoan tk :listTaiKhoan)
-            {
-                if(tk.getTaiKhoan().equals(txtTaiKhoan.getText()))
-                {
-                    tk.setMatKhau(txtMatKhau.getText());
-                }
-            }
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    br.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                }
-
-        
-        }
-        
-        
-         //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
-     File f = new File(currentDirectory);
-        try {
-            FileWriter fw = new FileWriter(f);
-            //Bước 2: Ghi dữ liệu
-               listTaiKhoan.forEach((element) -> {
-        String dulieudiemsinhvien = element.getTaiKhoan()+"|"+element.getMatKhau()+"\n";
-          try {
-              fw.write(dulieudiemsinhvien);
-          } catch (IOException ex) {
-              Logger.getLogger(formDanhSachSinhVien.class.getName()).log(Level.SEVERE, null, ex);
-          }
-        });
-
-    
-    
-     //Bước 3: Đóng luồng
-     fw.close();
-     
+                Taikhoan tk = new TaiKhoanDAO().getByID(DangNhap.user);
+                tk.setMatKhau(txtMatKhau.getText());
+              new TaiKhoanDAO().Sua(tk);
      JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công","Thông báo" , JOptionPane.INFORMATION_MESSAGE);
-     this.dispose();
-        } catch (IOException ex) {
-            Logger.getLogger(FormDoiMatKhau.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+            this.dispose();
         
         
         

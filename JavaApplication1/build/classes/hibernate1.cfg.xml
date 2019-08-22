@@ -11,14 +11,16 @@
     <property name="hibernate.connection.useUnicode">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <mapping class="javaapplication1.Pojo.Lophoc"/>
-    <mapping class="javaapplication1.Pojo.Khoabieu"/>
     <mapping class="javaapplication1.Pojo.KhoabieuId"/>
-    <mapping class="javaapplication1.Pojo.Bangdiem"/>
     <mapping class="javaapplication1.Pojo.Chucvu"/>
+    <mapping class="javaapplication1.Pojo.Phuckhao"/>
+    <mapping class="javaapplication1.Pojo.Sinhvien"/>
+    <mapping class="javaapplication1.Pojo.Khoabieu"/>
+    <mapping class="javaapplication1.Pojo.Bangdiem"/>
     <mapping class="javaapplication1.Pojo.Giaovu"/>
     <mapping class="javaapplication1.Pojo.Taikhoan"/>
     <mapping class="javaapplication1.Pojo.Lopkhoabieu"/>
     <mapping class="javaapplication1.Pojo.Lopmonhoc"/>
-    <mapping class="javaapplication1.Pojo.Sinhvien"/>
+    <mapping class="javaapplication1.Pojo.PhuckhaoId"/>
   </session-factory>
 </hibernate-configuration>

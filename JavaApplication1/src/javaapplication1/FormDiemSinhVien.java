@@ -62,6 +62,7 @@ public class FormDiemSinhVien extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         lbHoTen = new javax.swing.JLabel();
         lbLopHoc = new javax.swing.JLabel();
+        btnPhucKhao = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Điểm sinh viên");
@@ -109,6 +110,13 @@ public class FormDiemSinhVien extends javax.swing.JFrame {
 
         lbLopHoc.setText("lớp");
 
+        btnPhucKhao.setText("Phúc khảo điểm");
+        btnPhucKhao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPhucKhaoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -125,8 +133,10 @@ public class FormDiemSinhVien extends javax.swing.JFrame {
                     .addComponent(lbHoTen)
                     .addComponent(lbMSSV, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbLopHoc, javax.swing.GroupLayout.Alignment.LEADING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 419, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 405, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPhucKhao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -140,8 +150,9 @@ public class FormDiemSinhVien extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(lbHoTen))
-                .addGap(26, 26, 26)
+                    .addComponent(lbHoTen)
+                    .addComponent(btnPhucKhao))
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbLopHoc)
                     .addComponent(jLabel4))
@@ -158,7 +169,7 @@ public class FormDiemSinhVien extends javax.swing.JFrame {
     void  HienDanhSachDiem()
     {
        
-       List<Bangdiem> list = new BangDiemDAO().getListByMSSV("1842002");
+       List<Bangdiem> list = new BangDiemDAO().getListByMSSV(DangNhap.user);
        
        if(list==null)
        {
@@ -191,7 +202,7 @@ public class FormDiemSinhVien extends javax.swing.JFrame {
         for(int i =0;i<listDiemSV.size();i++)
         {
               listDataDiemSinhVien[i][0] = (i+1) + "";           
-              listDataDiemSinhVien[i][1] =  listDiemSV.get(i).getMssv();
+              listDataDiemSinhVien[i][1] =  listDiemSV.get(i).getMaBangDiem().split("-")[1];
               listDataDiemSinhVien[i][2] =  listDiemSV.get(i).getDiemGk();
               listDataDiemSinhVien[i][3] =  listDiemSV.get(i).getDiemCk();
               listDataDiemSinhVien[i][4] =  listDiemSV.get(i).getDiemKhac();
@@ -243,6 +254,13 @@ public class FormDiemSinhVien extends javax.swing.JFrame {
         frm.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
+    private void btnPhucKhaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPhucKhaoActionPerformed
+        // TODO add your handling code here:
+        FormPhucKhaoDiem frm = new FormPhucKhaoDiem();
+        frm.setLocationRelativeTo(null);
+        frm.setVisible(true);
+    }//GEN-LAST:event_btnPhucKhaoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -279,6 +297,7 @@ public class FormDiemSinhVien extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnPhucKhao;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
