@@ -440,7 +440,7 @@ public class FormDanhSachDiemSinhVien extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         Bangdiem diemSV = new Bangdiem();
-        diemSV.setMaBangDiem(cmbDiemLop.getSelectedItem().toString()+tbDiemSV.getValueAt(tbDiemSV.getSelectedRow(), 1).toString());
+        diemSV.setMaBangDiem(cmbDiemLop.getSelectedItem().toString()+"-"+tbDiemSV.getValueAt(tbDiemSV.getSelectedRow(), 1).toString());
         diemSV.setMssv(tbDiemSV.getValueAt(tbDiemSV.getSelectedRow(), 1).toString());
         diemSV.setHoTen(tbDiemSV.getValueAt(tbDiemSV.getSelectedRow(), 2).toString());
         diemSV.setDiemGk(txtDiemGk.getText());

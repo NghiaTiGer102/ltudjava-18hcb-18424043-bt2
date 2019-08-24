@@ -39,6 +39,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnDanhSachDiem" alignment="1" min="-2" pref="188" max="-2" attributes="0"/>
                   <Component id="btnDanhSachMonHoc" alignment="1" min="-2" pref="188" max="-2" attributes="0"/>
+                  <Component id="btnPhuckhao" alignment="1" min="-2" pref="188" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
           </Group>
@@ -58,7 +59,10 @@
                   <Component id="btnDanhSachDiem" alignment="3" min="-2" pref="92" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-              <Component id="btnDoiMatKhau" min="-2" pref="73" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="btnDoiMatKhau" pref="73" max="32767" attributes="0"/>
+                  <Component id="btnPhuckhao" max="32767" attributes="0"/>
+              </Group>
               <EmptySpace pref="66" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -118,6 +122,17 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDoiMatKhauActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnPhuckhao">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="13" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ph&#xfa;c kh&#x1ea3;o &#x111;i&#x1ec3;m"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPhuckhaoActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -34,6 +34,7 @@ public class FormGiaoDienChinh extends javax.swing.JFrame {
         btnDanhSachThoiKhoaBieu = new javax.swing.JButton();
         btnDanhSachDiem = new javax.swing.JButton();
         btnDoiMatKhau = new javax.swing.JButton();
+        btnPhuckhao = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Quản lý");
@@ -86,6 +87,14 @@ public class FormGiaoDienChinh extends javax.swing.JFrame {
             }
         });
 
+        btnPhuckhao.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btnPhuckhao.setText("Phúc khảo điểm");
+        btnPhuckhao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPhuckhaoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,7 +108,8 @@ public class FormGiaoDienChinh extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnDanhSachDiem, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDanhSachMonHoc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnDanhSachMonHoc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPhuckhao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70))
         );
         layout.setVerticalGroup(
@@ -114,7 +124,9 @@ public class FormGiaoDienChinh extends javax.swing.JFrame {
                     .addComponent(btnDanhSachThoiKhoaBieu, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDanhSachDiem, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
-                .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnDoiMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                    .addComponent(btnPhuckhao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(66, Short.MAX_VALUE))
         );
 
@@ -180,6 +192,14 @@ public class FormGiaoDienChinh extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowOpened
 
+    private void btnPhuckhaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPhuckhaoActionPerformed
+        // TODO add your handling code here:
+        
+        FormPhucKhaoDiem frm = new FormPhucKhaoDiem();
+           frm.setLocationRelativeTo(null);
+           frm.setVisible(true);
+    }//GEN-LAST:event_btnPhuckhaoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -221,5 +241,6 @@ public class FormGiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JButton btnDanhSachSinhVien;
     private javax.swing.JButton btnDanhSachThoiKhoaBieu;
     private javax.swing.JButton btnDoiMatKhau;
+    private javax.swing.JButton btnPhuckhao;
     // End of variables declaration//GEN-END:variables
 }

@@ -24,7 +24,7 @@ public class GiaoVuDAO {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Giaovu  gvre = new Giaovu();
         try {
-            String hql = "From giaoVu where maGiaoVu = :maGiaoVu ";
+            String hql = "From Giaovu where maGiaoVu = :maGiaoVu ";
                 Query query = session.createQuery(hql);
                 query.setParameter("maGiaoVu", gv.getMaGiaoVu());
               

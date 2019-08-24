@@ -256,7 +256,7 @@ public class FormDiemSinhVien extends javax.swing.JFrame {
 
     private void btnPhucKhaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPhucKhaoActionPerformed
         // TODO add your handling code here:
-        FormPhucKhaoDiem frm = new FormPhucKhaoDiem();
+        FormPhucKhaoDiemSinhVien frm = new FormPhucKhaoDiemSinhVien();
         frm.setLocationRelativeTo(null);
         frm.setVisible(true);
     }//GEN-LAST:event_btnPhucKhaoActionPerformed
